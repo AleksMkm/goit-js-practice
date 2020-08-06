@@ -7,10 +7,9 @@
 // в произвольном регистре.
 
 function checkForSpam(str) {
-  return str.toLowerCase().includes('spam') ||
-    str.toLowerCase().includes('sale')
-    ? true
-    : false;
+  return (
+    str.toLowerCase().includes('spam') || str.toLowerCase().includes('sale')
+  );
 }
 
 console.log(checkForSpam('Latest technology news')); // false

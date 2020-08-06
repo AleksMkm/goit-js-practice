@@ -32,11 +32,11 @@
 // функций - isLoginUnique и isLoginValid.
 
 function isLoginValid(login, min = 4, max = 16) {
-  return login.length >= min && login.length <= max ? true : false;
+  return login.length >= min && login.length <= max;
 }
 
 function isLoginUnique(allLogins, login) {
-  return allLogins.includes(login) ? false : true;
+  return !allLogins.includes(login);
 }
 
 function addLogin(allLogins, login) {
@@ -44,10 +44,10 @@ function addLogin(allLogins, login) {
   const REFUSAL = 'Такой логин уже используется!';
   const ERROR = 'Ошибка! Логин должен быть размером от 4 до 16 символов';
   let message;
-  if (isLoginValid(login) === false) {
+  if (!isLoginValid(login)) {
     return (message = ERROR);
   }
-  if (isLoginUnique(allLogins, login) === false) {
+  if (!isLoginUnique(allLogins, login)) {
     return (message = REFUSAL);
   }
   allLogins.push(login);

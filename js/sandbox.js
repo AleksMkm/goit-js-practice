@@ -1,10 +1,11 @@
-const printMessage = function (message) {
-  console.log(message);
-};
+function rangeOfNumbers(startNum, endNum) {
+  if (startNum > endNum) {
+    return [];
+  } else {
+    var myArr = rangeOfNumbers(startNum + 1, endNum);
+    myArr.push(startNum);
+    return myArr;
+  }
+}
 
-const higherOrderFunction = function (callback) {
-  const string = 'HOCs are awesome';
-  callback(string);
-};
-
-higherOrderFunction(printMessage);
+console.log(rangeOfNumbers(1, 5));

@@ -11,13 +11,16 @@
 const array1 = ['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong'];
 const array2 = [5, 10, 15];
 
-const getItemsString = function (array) {
-  let string = '';
-  for (let i = 0; i < array.length; i += 1) {
-    string += `${i + 1} - ${array[i]}\n`;
-  }
-  return string;
-};
+// const getItemsString = function (array) {
+//   let string = '';
+//   for (let i = 0; i < array.length; i += 1) {
+//     string += `${i + 1} - ${array[i]}\n`;
+//   }
+//   return string;
+// };
+
+const getItemsString = array =>
+  array.map((el, index, array) => `${index + 1} - ${array[index]}\n`).join('');
 
 console.log(getItemsString(array1));
 console.log(getItemsString(array2));
